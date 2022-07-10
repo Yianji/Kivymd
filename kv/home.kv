@@ -1,0 +1,52 @@
+#: import get_color_from_hex kivy.utils.get_color_from_hex
+#: set theme_color get_color_from_hex("#81b71a")
+
+MDScreen:
+    name: "home"
+
+    MDBoxLayout:
+        orientation: 'vertical'
+
+        MDToolbar:
+            md_bg_color: theme_color
+            left_action_items: [["home"]]
+            right_action_items: [["cart"]]
+
+        MDBoxLayout:
+            orientation: 'vertical'
+
+            MDBoxLayout:
+                orientation: 'vertical'
+                md_bg_color: theme_color
+                adaptive_height: True
+
+                MDBoxLayout:
+                    orientation: 'vertical'
+                    padding: 20
+
+                    MDLabel:
+                        text: "SNICKWEAR"
+                        bold: True
+                        font_size: "20sp"
+                        color: 1, 1, 1, 1
+
+                    MDBoxLayout:
+                    
+                    MDLabel:
+                        text: "We Offer Free Shipping"
+                        bold: True
+                        font_size: "14sp"
+                        color: 1, 1, 1, .75
+
+            MDBoxLayout:
+                padding: 20
+
+                ScrollView:
+                    bar_width: 0
+
+                    MDList:
+                        StackLayout:
+                            spacing: 7.5
+                            id: cards_layout
+                            size_hint_y: None
+                            size: self.minimum_size
